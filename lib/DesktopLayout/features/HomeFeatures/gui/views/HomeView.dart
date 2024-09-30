@@ -18,7 +18,10 @@ class HomeView extends StatelessWidget {
           crossAxisAlignment: WrapCrossAlignment.center,
           runSpacing: 30.h,
           spacing: 20,
-          children: [InfoContainer(), ImageContainer()],
+          children: [
+            SizedBox(width: 800.w, child: InfoContainer()),
+            ImageContainer()
+          ],
         ),
       ),
     );
