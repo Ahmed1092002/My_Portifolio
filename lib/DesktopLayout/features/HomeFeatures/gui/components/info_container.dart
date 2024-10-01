@@ -55,9 +55,15 @@ class InfoContainer extends HookWidget {
               "Flutter Developer",
               style: Theme.of(context).textTheme.displayLarge,
             ),
+            Text(
+              """Flutter Developer skilled in building responsive, cross-platform mobile apps using Flutter, Dart, and Firebase. 
+Experienced in state management, API integration, and delivering scalable, user-friendly applications with 
+clean architecture and Agile methodologies.
+""",
+              style: Theme.of(context).textTheme.bodySmall,
+            ),
             Row(
               mainAxisAlignment: MainAxisAlignment.start,
-              
               children: [
                 CustomButton(
                     Backcolors: ColorsUtiles.PrimaryColor_blue.withOpacity(0.5),

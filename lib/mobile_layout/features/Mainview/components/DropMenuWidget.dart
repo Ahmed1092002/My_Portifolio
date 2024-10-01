@@ -1,16 +1,24 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:dropdown_button2/dropdown_button2.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 import 'package:my_portifolio/DesktopLayout/features/MainScrean/gui/components/ChangeThemeNotifer.dart';
 import 'package:my_portifolio/DesktopLayout/features/MainScrean/gui/components/c_v_down_button.dart';
 import 'package:my_portifolio/DesktopLayout/features/MainScrean/gui/components/custom_text_button.dart';
 import 'package:my_portifolio/core/shared/colors/ColorsUtiles.dart';
 import 'package:my_portifolio/core/shared/themes/dark_theme.dart';
+import 'package:my_portifolio/core/shared/utiles/key_utiles.dart';
 
 class DropMenuWidget extends StatefulWidget {
   final ValueNotifier<ThemeMode> themeNotifier;
+  final Function(String) onScroll;
 
-  const DropMenuWidget({super.key, required this.themeNotifier});
+  const DropMenuWidget({
+    Key? key,
+    required this.themeNotifier,
+    required this.onScroll,
+  }) : super(key: key);
 
   @override
   _DropMenuWidgetState createState() => _DropMenuWidgetState();
@@ -43,41 +51,51 @@ class _DropMenuWidgetState extends State<DropMenuWidget> {
         ),
         items: [
           DropdownMenuItem(
+            value: 'Home',
+            onTap: () => widget.onScroll(KeyUtiles.home),
+            child: CustomTextButton(
+              title: "Home",
+              onScroll: () => widget.onScroll(KeyUtiles.home),
+            ),
+          ),
+          DropdownMenuItem(
             value: 'about_me',
+            onTap: () => widget.onScroll(KeyUtiles.aboutMe),
             child: CustomTextButton(
               title: "About Me",
+              onScroll: () => widget.onScroll(KeyUtiles.aboutMe),
             ),
           ),
-          DropdownMenuItem(
-            value: 'education',
-            child: CustomTextButton(
-              title: "Education",
-            ),
-          ),
-          DropdownMenuItem(
-            value: 'experience',
-            child: CustomTextButton(
-              title: "Experience",
-            ),
-          ),
-          DropdownMenuItem(
-            value: 'skills',
-            child: CustomTextButton(
-              title: "Skills",
-            ),
-          ),
-          DropdownMenuItem(
-            value: 'projects',
-            child: CustomTextButton(
-              title: "Projects",
-            ),
-          ),
-          DropdownMenuItem(
-            value: 'contact_me',
-            child: CustomTextButton(
-              title: "Contact me",
-            ),
-          ),
+          // DropdownMenuItem(
+          //   value: 'education',
+          //   child: CustomTextButton(
+          //     title: "Education",
+          //   ),
+          // ),
+          // DropdownMenuItem(
+          //   value: 'experience',
+          //   child: CustomTextButton(
+          //     title: "Experience",
+          //   ),
+          // ),
+          // DropdownMenuItem(
+          //   value: 'skills',
+          //   child: CustomTextButton(
+          //     title: "Skills",
+          //   ),
+          // ),
+          // DropdownMenuItem(
+          //   value: 'projects',
+          //   child: CustomTextButton(
+          //     title: "Projects",
+          //   ),
+          // ),
+          // DropdownMenuItem(
+          //   value: 'contact_me',
+          //   child: CustomTextButton(
+          //     title: "Contact me",
+          //   ),
+          // ),
           DropdownMenuItem(
             value: 'cv_download',
             child: CVDownButton(),

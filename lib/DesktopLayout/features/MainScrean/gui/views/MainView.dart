@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:my_portifolio/DesktopLayout/features/AboutMeFeature/gui/views/AboutMeView.dart';
-import 'package:my_portifolio/Tabletlayout/features/Mainview/components/CustomAppBarMobileLayout.dart';
 import 'package:my_portifolio/core/shared/utiles/Assets.dart';
 
 import 'package:my_portifolio/DesktopLayout/features/HomeFeatures/gui/views/HomeView.dart';
 import 'package:my_portifolio/DesktopLayout/features/MainScrean/gui/components/custom_app_bar.dart';
 import 'package:my_portifolio/core/shared/utiles/key_utiles.dart';
+import 'package:my_portifolio/mobile_layout/features/Mainview/components/CustomAppBarMobileLayout.dart';
 import 'package:my_portifolio/mobile_layout/features/Mainview/components/DropMenuWidget.dart';
 
 class MainView extends StatefulWidget {
@@ -69,7 +69,20 @@ class _MainViewState extends State<MainView> {
                     }
                   },
                 )
-              : CustomAppBarMobileLayout(themeNotifier: widget.themeNotifier),
+              : CustomAppBarMobileLayout(
+                  themeNotifier: widget.themeNotifier,
+                  onScroll: (String section) {
+                    switch (section) {
+                      case KeyUtiles.home:
+                        scrollToSection(_homeKey);
+                        break;
+                      case KeyUtiles.aboutMe:
+                        scrollToSection(_aboutMeKey);
+                        break;
+                      // Add cases for other sections
+                    }
+                  },
+                ),
           SliverList(
             key: _homeKey,
             delegate: SliverChildListDelegate(
