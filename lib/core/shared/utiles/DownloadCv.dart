@@ -4,12 +4,13 @@ import 'package:path_provider/path_provider.dart';
 import 'package:flutter/services.dart' show ByteData, rootBundle;
 import 'dart:html' as html;
 
-
 class DownloadCv {
-static Future<void> downloadFile() async {
+  static Future<void> downloadFile() async {
     // Define the asset path and the file name
-    String assetPath = 'assets/pdf/ats summary Ahmed Tamer Elsayed Flutter Developer .pdf'; // Change to your asset path
-    String fileName = 'ats summary Ahmed Tamer Elsayed Flutter Developer .pdf'; // Name of the file
+    String assetPath =
+        'assets/pdf/ats summary Ahmed Tamer Elsayed Flutter Developer  (1).pdf'; // Change to your asset path
+    String fileName =
+        'ats summary Ahmed Tamer Elsayed Flutter Developer  (1).pdf'; // Name of the file
 
     // Load the file from assets
     ByteData data = await rootBundle.load(assetPath);
@@ -24,5 +25,3 @@ static Future<void> downloadFile() async {
     html.Url.revokeObjectUrl(url); // Clean up the URL
   }
 }
-
-

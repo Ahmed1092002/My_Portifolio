@@ -13,21 +13,21 @@ class EducationView extends HookWidget {
     return Padding(
       padding: const EdgeInsets.all(20.0),
       child: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
           Text(
             'My Education Qualification',
             style: Theme.of(context).textTheme.headlineLarge,
           ),
           Wrap(
-            alignment: WrapAlignment.start,
             spacing: 10.w,
             runSpacing: 10.w,
+            alignment: WrapAlignment.start,
             crossAxisAlignment: WrapCrossAlignment.start,
-            runAlignment: WrapAlignment.spaceAround,
+            runAlignment: WrapAlignment.start,
+            direction: Axis.horizontal,
             children: [
-              const EducationWidget(
-                title:"Academic Education" ,
+              const CustomAnimationWidget(
+                title: "Academic Education",
                 educationList: [
                   EducationCard(
                     title: 'Helwan University',
@@ -36,12 +36,12 @@ class EducationView extends HookWidget {
                     duration: "Duration: 4 Years (Oct 2020 – Jul 2024)",
                   ),
                 ],
-              ),  
-                            SizedBox(
+              ),
+              SizedBox(
                 width: 50.w,
-              ),    
-                      const EducationWidget(
-                        title: "Courses",
+              ),
+              const CustomAnimationWidget(
+                title: "Courses",
                 educationList: [
                   EducationCard(
                     title: '1. Flutter Course',

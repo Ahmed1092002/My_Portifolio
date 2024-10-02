@@ -41,6 +41,9 @@ class _MyAppState extends State<MyApp> {
           MediaQuery.of(context).size.height),
       minTextAdapt: true,
       splitScreenMode: true,
+      enableScaleText: () {
+        return true;
+      },
 
       // Use builder only if you need to use library outside ScreenUtilInit context
       builder: (_, child) {

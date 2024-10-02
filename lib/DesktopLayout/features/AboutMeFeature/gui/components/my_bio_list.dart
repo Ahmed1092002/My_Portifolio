@@ -43,8 +43,11 @@ class _MyBioListState extends State<MyBioList> with TickerProviderStateMixin {
       title: "Birthday",
       desripion: "10/9/2002",
     ),    MyBiographayDetailsWidget(
-      title: " Military Service",
+      title: "Military Service",
       desripion: "Exempt",
+    ),   MyBiographayDetailsWidget(
+      title: "Languages",
+      desripion: "Arabic,English",
     ),
   ];
 

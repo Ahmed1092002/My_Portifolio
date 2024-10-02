@@ -108,6 +108,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:my_portifolio/DesktopLayout/features/AboutMeFeature/gui/views/AboutMeView.dart';
 import 'package:my_portifolio/DesktopLayout/features/EducationFeature/view/EducationView.dart';
+import 'package:my_portifolio/DesktopLayout/features/ExperienceFeature/views/ExperienceView.dart';
 import 'package:my_portifolio/core/shared/utiles/Assets.dart';
 import 'package:my_portifolio/DesktopLayout/features/HomeFeatures/gui/views/HomeView.dart';
 import 'package:my_portifolio/DesktopLayout/features/MainScrean/gui/components/custom_app_bar.dart';
@@ -151,6 +152,10 @@ class _MainViewState extends State<MainView> {
             duration: Duration(milliseconds: 1000), curve: Curves.easeInOut);
       case KeyUtiles.education:
         _pageController.animateToPage(4,
+            duration: Duration(milliseconds: 1000),
+            curve: Curves.easeInOut);  
+      case KeyUtiles.experience:
+        _pageController.animateToPage(6,
             duration: Duration(milliseconds: 1000),
             curve: Curves.easeInOut); // AboutMeView
         break;
@@ -204,6 +209,8 @@ class _MainViewState extends State<MainView> {
           SizedBox(height: 150.h),
 
           EducationView(),
+                    SizedBox(height: 150.h),
+          ExperienceView()
         ],
       ),
     );

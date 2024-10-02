@@ -4,20 +4,20 @@ import 'package:flutter_hooks/flutter_hooks.dart';
 
 import 'package:my_portifolio/DesktopLayout/features/EducationFeature/components/education_container.dart';
 
-class EducationWidget extends StatefulWidget {
+class CustomAnimationWidget extends StatefulWidget {
   final List<Widget> educationList;
   final String title;
 
-  const EducationWidget({
+  const CustomAnimationWidget({
     Key? key,
     required this.educationList,
     required this.title,
   }) : super(key: key);
   @override
-  State<EducationWidget> createState() => _EducationWidgetState();
+  State<CustomAnimationWidget> createState() => _CustomAnimationWidgetState();
 }
 
-class _EducationWidgetState extends State<EducationWidget>
+class _CustomAnimationWidgetState extends State<CustomAnimationWidget>
     with TickerProviderStateMixin {
   late List<AnimationController> _animationControllers;
   late List<Animation<Offset>> position;
@@ -72,7 +72,7 @@ class _EducationWidgetState extends State<EducationWidget>
   Future<void> loadIncreamentally() async {
     for (int i = 0; i < _animationControllers.length; i++) {
       await Future.delayed(
-          const Duration(milliseconds: 300)); // Delay between animations
+          const Duration(milliseconds: 600)); // Delay between animations
       _animationControllers[i].forward();
     }
   }
@@ -84,7 +84,7 @@ class _EducationWidgetState extends State<EducationWidget>
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
-         widget.title,
+          widget.title,
           style: Theme.of(context).textTheme.bodyMedium,
         ),
         Wrap(
