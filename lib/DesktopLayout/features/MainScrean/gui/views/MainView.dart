@@ -147,7 +147,7 @@ class _MainViewState extends State<MainView> {
             curve: Curves.easeInOut); // HomeView
         break;
       case KeyUtiles.aboutMe:
-        _pageController.animateToPage(1,
+        _pageController.animateToPage(2,
             duration: Duration(milliseconds: 1000), curve: Curves.easeInOut);
       case KeyUtiles.education:
         _pageController.animateToPage(4,
@@ -170,7 +170,7 @@ class _MainViewState extends State<MainView> {
               ),
             )
           : PreferredSize(
-              preferredSize: Size(MediaQuery.of(context).size.width.w, 100.h),
+              preferredSize: Size(MediaQuery.of(context).size.width.w, 50.h),
               child: CustomAppBarMobileLayout(
                 themeNotifier: widget.themeNotifier,
                 onScroll: _scrollToSection,
@@ -189,12 +189,16 @@ class _MainViewState extends State<MainView> {
           //         themeNotifier: widget.themeNotifier,
           //         onScroll: _scrollToSection,
           //       ),
-          HomeView(
-            onScroll: () {
-              _scrollToSection(KeyUtiles.aboutMe);
-            },
+          Padding(
+            padding: const EdgeInsets.all(20.0),
+            child: HomeView(
+              onScroll: () {
+                _scrollToSection(KeyUtiles.aboutMe);
+              },
+            ),
           ),
           // SizedBox(height: MediaQuery.of(context).size.height.h),
+          SizedBox(height: 150.h),
 
           AboutMeView(),
           SizedBox(height: 150.h),

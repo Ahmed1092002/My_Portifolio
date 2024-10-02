@@ -7,6 +7,7 @@ static  final GlobalKey aboutMeKey = GlobalKey();
   static const String home = "home";
   static const String aboutMe = "about me";
   static const String education = "education";
+  static const String experience = "experience";
    static void scrollToSection(GlobalKey key) {
     if (key.currentContext != null) {
       Scrollable.ensureVisible(

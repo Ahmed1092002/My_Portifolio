@@ -58,7 +58,7 @@ class _MyAppState extends State<MyApp> {
         );
       },
       child: ScreenTypeLayout(
-        mobile: MainViewMobileLayout(themeNotifier: themeNotifier),
+        mobile: MainView(themeNotifier: themeNotifier),
         tablet: MainView(themeNotifier: themeNotifier),
         desktop: MainView(themeNotifier: themeNotifier),
       ),

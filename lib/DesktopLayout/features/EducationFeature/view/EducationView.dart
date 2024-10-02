@@ -3,7 +3,7 @@ import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:my_portifolio/DesktopLayout/features/EducationFeature/components/courses_widget.dart';
 import 'package:my_portifolio/DesktopLayout/features/EducationFeature/components/education_container.dart';
-import 'package:my_portifolio/DesktopLayout/features/EducationFeature/components/education_widget.dart';
+import 'package:my_portifolio/core/shared/widgets/CustomAnimationWidget.dart';
 
 class EducationView extends HookWidget {
   const EducationView({Key? key}) : super(key: key);
@@ -26,7 +26,8 @@ class EducationView extends HookWidget {
             crossAxisAlignment: WrapCrossAlignment.start,
             runAlignment: WrapAlignment.spaceAround,
             children: [
-              EducationWidget(
+              const EducationWidget(
+                title:"Academic Education" ,
                 educationList: [
                   EducationCard(
                     title: 'Helwan University',
@@ -39,7 +40,8 @@ class EducationView extends HookWidget {
                             SizedBox(
                 width: 50.w,
               ),    
-                      EducationWidget(
+                      const EducationWidget(
+                        title: "Courses",
                 educationList: [
                   EducationCard(
                     title: '1. Flutter Course',

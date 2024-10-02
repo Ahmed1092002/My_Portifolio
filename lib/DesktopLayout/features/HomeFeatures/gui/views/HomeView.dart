@@ -6,7 +6,7 @@ import 'package:my_portifolio/DesktopLayout/features/HomeFeatures/gui/components
 import 'package:my_portifolio/core/shared/themes/dark_theme.dart';
 
 class HomeView extends StatelessWidget {
-    final VoidCallback onScroll;
+  final VoidCallback onScroll;
 
   const HomeView({
     Key? key,
@@ -16,7 +16,7 @@ class HomeView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.only(top: 150),
+      padding: EdgeInsets.only(top: 120),
       child: SizedBox(
         width: MediaQuery.of(context).size.width,
         child: Wrap(
@@ -25,9 +25,11 @@ class HomeView extends StatelessWidget {
           runSpacing: 30.h,
           spacing: 20,
           children: [
-            SizedBox(width: 800.w, child: InfoContainer(
-              onScroll: onScroll ,
-            )),
+            SizedBox(
+                width: 800.w,
+                child: InfoContainer(
+                  onScroll: onScroll,
+                )),
             ImageContainer()
           ],
         ),

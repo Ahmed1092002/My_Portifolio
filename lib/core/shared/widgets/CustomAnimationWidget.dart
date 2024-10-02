@@ -1,11 +1,18 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
+
 import 'package:my_portifolio/DesktopLayout/features/EducationFeature/components/education_container.dart';
 
 class EducationWidget extends StatefulWidget {
   final List<Widget> educationList;
+  final String title;
 
-  const EducationWidget({super.key, required this.educationList});
+  const EducationWidget({
+    Key? key,
+    required this.educationList,
+    required this.title,
+  }) : super(key: key);
   @override
   State<EducationWidget> createState() => _EducationWidgetState();
 }
@@ -77,7 +84,7 @@ class _EducationWidgetState extends State<EducationWidget>
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
-          'Academic Education',
+         widget.title,
           style: Theme.of(context).textTheme.bodyMedium,
         ),
         Wrap(
