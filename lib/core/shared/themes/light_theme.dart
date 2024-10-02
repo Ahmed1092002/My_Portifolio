@@ -13,9 +13,11 @@ ThemeData lightTheme = ThemeData().copyWith(
     ),
     textTheme: TextTheme(
       titleMedium: GoogleFonts.roboto(
-          color: ColorsUtiles.PrimaryColor_blue, fontSize: 20.sp),
+          color: ColorsUtiles.PrimaryColor_blue, fontSize: 35.sp),
+      titleSmall: GoogleFonts.roboto(
+          color: ColorsUtiles.backGroundColor_gray, fontSize: 25.sp),
       headlineLarge: GoogleFonts.roboto(
-          color: ColorsUtiles.PrimaryColor_blue, fontSize: 40.sp),
+          color: ColorsUtiles.PrimaryColor_blue, fontSize: 50.sp),
       bodySmall: GoogleFonts.roboto(
           color: ColorsUtiles.backGroundColor_gray, fontSize: 15.sp),
       bodyMedium: GoogleFonts.roboto(

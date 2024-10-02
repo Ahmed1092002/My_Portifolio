@@ -4,7 +4,9 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:my_portifolio/DesktopLayout/features/AboutMeFeature/gui/components/about_me_image.dart';
 import 'package:my_portifolio/DesktopLayout/features/AboutMeFeature/gui/components/about_me_photos.dart';
 import 'package:my_portifolio/DesktopLayout/features/AboutMeFeature/gui/components/about_me_text.dart';
-import 'package:my_portifolio/core/shared/colors/ColorsUtiles.dart';
+import 'package:my_portifolio/DesktopLayout/features/AboutMeFeature/gui/components/my_biographay_widget.dart';
+import 'package:my_portifolio/core/shared/utiles/key_utiles.dart';
+import 'package:visibility_detector/visibility_detector.dart';
 
 class AboutMeView extends HookWidget {
   const AboutMeView({Key? key}) : super(key: key);
@@ -13,37 +15,40 @@ class AboutMeView extends HookWidget {
   Widget build(BuildContext context) {
     // Animation controller for slide and opacity
     final animationController = useAnimationController(
-      duration: const Duration(seconds: 1), // Adjust duration as needed
+      duration: const Duration(seconds: 1),
     );
 
-    // Slide transition animation from left to right
     final slideTransition = useMemoized(() => Tween<Offset>(
-          begin: const Offset(-1, 0), // Start off-screen to the left
-          end: Offset.zero, // End position (on-screen)
+          begin: const Offset(-1, 0), // Start off-screen from the left
+          end: Offset.zero,
         ).animate(CurvedAnimation(
           parent: animationController,
-          curve: Curves.fastEaseInToSlowEaseOut, // Smooth animation
+          curve: Curves.easeInOut,
         )));
-
-    // Opacity animation from 0 to 1
     final opacity = useAnimation(animationController.drive(
       Tween<double>(begin: 0.0, end: 1.0),
     ));
 
     useEffect(() {
-      animationController.forward(); // Start the animation
-      return null;
-    }, []);
+      animationController.forward();
+    });
 
-    return Wrap(
-      alignment: WrapAlignment.center,
-      crossAxisAlignment: WrapCrossAlignment.center,
-      runSpacing: 30.h,
-      spacing: 20,
-      children: [
-        AboutMeText(slideTransition: slideTransition, opacity: opacity),
-        AboutMePhotos(),
-      ],
+    return SingleChildScrollView(
+      child: Column(
+        children: [
+          Wrap(
+            alignment: WrapAlignment.center,
+            crossAxisAlignment: WrapCrossAlignment.center,
+            runSpacing: 30.h,
+            spacing: 20.h,
+            children: [
+              AboutMeText(slideTransition: slideTransition, opacity: opacity),
+              AboutMePhotos(),
+            ],
+          ),
+          MyBiographayWidget()
+        ],
+      ),
     );
   }
 }

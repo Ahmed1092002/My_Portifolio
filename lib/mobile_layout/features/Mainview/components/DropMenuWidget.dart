@@ -3,9 +3,9 @@ import 'package:dropdown_button2/dropdown_button2.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import 'package:my_portifolio/DesktopLayout/features/MainScrean/gui/components/ChangeThemeNotifer.dart';
-import 'package:my_portifolio/DesktopLayout/features/MainScrean/gui/components/c_v_down_button.dart';
-import 'package:my_portifolio/DesktopLayout/features/MainScrean/gui/components/custom_text_button.dart';
+import 'package:my_portifolio/core/shared/widgets/ChangeThemeNotifer.dart';
+import 'package:my_portifolio/core/shared/widgets/c_v_down_button.dart';
+import 'package:my_portifolio/core/shared/widgets/custom_text_button.dart';
 import 'package:my_portifolio/core/shared/colors/ColorsUtiles.dart';
 import 'package:my_portifolio/core/shared/themes/dark_theme.dart';
 import 'package:my_portifolio/core/shared/utiles/key_utiles.dart';
@@ -66,12 +66,16 @@ class _DropMenuWidgetState extends State<DropMenuWidget> {
               onScroll: () => widget.onScroll(KeyUtiles.aboutMe),
             ),
           ),
-          // DropdownMenuItem(
-          //   value: 'education',
-          //   child: CustomTextButton(
-          //     title: "Education",
-          //   ),
-          // ),
+          DropdownMenuItem(
+            value: 'education',
+                        onTap: () => widget.onScroll(KeyUtiles.education),
+
+            child: CustomTextButton(
+              title: "Education",
+                            onScroll: () => widget.onScroll(KeyUtiles.education),
+
+            ),
+          ),
           // DropdownMenuItem(
           //   value: 'experience',
           //   child: CustomTextButton(

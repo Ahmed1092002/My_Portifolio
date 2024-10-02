@@ -18,7 +18,7 @@ class CustomButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialButton(
-      onPressed: () {},
+      onPressed: onClick,
       height: 50.h,
       minWidth: 70.w,
       animationDuration: Duration(seconds: 1),

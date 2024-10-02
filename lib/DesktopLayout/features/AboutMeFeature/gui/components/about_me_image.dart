@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:my_portifolio/core/shared/colors/ColorsUtiles.dart';
 
-class AboutMeImage extends StatelessWidget {
+class AboutMeImage extends HookWidget {
   final String image;
   const AboutMeImage({
     super.key,
@@ -19,7 +20,7 @@ class AboutMeImage extends StatelessWidget {
         padding: const EdgeInsets.all(8.0),
         child: Image.asset(
           image,
-          width: 100.w,
+          width: 65.w,
           fit: BoxFit.cover,
         ),
       ),

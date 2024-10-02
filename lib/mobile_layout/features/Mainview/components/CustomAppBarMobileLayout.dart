@@ -5,7 +5,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:my_portifolio/core/shared/utiles/Assets.dart';
 import 'package:my_portifolio/mobile_layout/features/Mainview/components/DropMenuWidget.dart';
 
-class CustomAppBarMobileLayout extends StatelessWidget {
+class CustomAppBarMobileLayout extends StatefulWidget {
   final ValueNotifier<ThemeMode> themeNotifier;
   final Function(String) onScroll;
 
@@ -16,9 +16,14 @@ class CustomAppBarMobileLayout extends StatelessWidget {
   }) : super(key: key);
 
   @override
+  State<CustomAppBarMobileLayout> createState() => _CustomAppBarMobileLayoutState();
+}
+
+class _CustomAppBarMobileLayoutState extends State<CustomAppBarMobileLayout> {
+  @override
   Widget build(BuildContext context) {
-    return SliverAppBar(
-      pinned: true,
+    return AppBar(
+      // pinned: true,
       leading: Padding(
         padding: const EdgeInsets.all(8.0),
         child: Image.asset(
@@ -28,9 +33,9 @@ class CustomAppBarMobileLayout extends StatelessWidget {
       ),
       actions: [
         DropMenuWidget(
-          themeNotifier: themeNotifier,
+          themeNotifier: widget.themeNotifier,
           onScroll: (string) {
-            onScroll(string);
+            widget.onScroll(string);
           },
         ),
       ],

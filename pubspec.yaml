@@ -42,6 +42,10 @@ dependencies:
   flutter_launcher_icons: ^0.14.1
   responsive_builder: ^0.7.1
   dropdown_button2: ^2.3.9
+  visibility_detector: ^0.3.3
+  path_provider: ^2.0.13
+  url_launcher: ^6.3.0
+
 
   
 flutter_launcher_icons:
@@ -93,6 +97,7 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
     - assets/images/
+    - assets/pdf/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

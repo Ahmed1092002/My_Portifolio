@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:my_portifolio/DesktopLayout/features/AboutMeFeature/gui/components/about_me_image.dart';
 
-class AboutMePhotos extends StatelessWidget {
+class AboutMePhotos extends HookWidget {
   const AboutMePhotos({
     super.key,
   });

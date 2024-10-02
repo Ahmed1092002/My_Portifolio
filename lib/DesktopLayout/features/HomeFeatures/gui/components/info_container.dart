@@ -1,14 +1,19 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:my_portifolio/DesktopLayout/features/HomeFeatures/gui/components/row_of_button.dart';
 import 'package:my_portifolio/core/shared/colors/ColorsUtiles.dart';
 import 'package:my_portifolio/core/shared/themes/dark_theme.dart';
 import 'package:my_portifolio/core/shared/utiles/Assets.dart';
 import 'package:my_portifolio/core/shared/widgets/custom_button.dart';
 
 class InfoContainer extends HookWidget {
+  final VoidCallback onScroll;
   const InfoContainer({
     super.key,
+    required this.onScroll,
   });
 
   @override
@@ -34,6 +39,7 @@ class InfoContainer extends HookWidget {
       return null;
     });
 
+  
     return SlideTransition(
       position: slideTransition,
       child: AnimatedOpacity(
@@ -62,23 +68,8 @@ clean architecture and Agile methodologies.
 """,
               style: Theme.of(context).textTheme.bodySmall,
             ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: [
-                CustomButton(
-                    Backcolors: ColorsUtiles.PrimaryColor_blue.withOpacity(0.5),
-                    borderColors: Colors.transparent,
-                    onClick: () {},
-                    title: "Contact Me"),
-                SizedBox(
-                  width: 10.w,
-                ),
-                CustomButton(
-                    Backcolors: Colors.transparent,
-                    borderColors: Colors.white,
-                    onClick: () {},
-                    title: "Know More")
-              ],
+            RowOfButton(
+              onScroll: onScroll,
             ),
           ],
         ),

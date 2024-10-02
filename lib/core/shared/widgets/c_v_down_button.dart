@@ -2,6 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:my_portifolio/core/shared/colors/ColorsUtiles.dart';
 import 'package:my_portifolio/core/shared/themes/dark_theme.dart';
+import 'package:my_portifolio/core/shared/utiles/DownloadCv.dart';
+import 'dart:io';
+import 'package:path_provider/path_provider.dart';
+import 'package:flutter/services.dart' show rootBundle;
 
 class CVDownButton extends StatefulWidget {
   const CVDownButton({
@@ -21,7 +25,9 @@ class _CVDownButtonState extends State<CVDownButton> {
       padding: const EdgeInsets.all(8.0),
       child: InkWell(
         mouseCursor: MouseCursor.defer,
-        onTap: () => {},
+        onTap: () async {
+          await DownloadCv.downloadFile();
+        },
         onHover: (isHovering) {
           // Update the color based on whether the mouse is hovering or not
           setState(() {

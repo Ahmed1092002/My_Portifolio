@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_hooks/flutter_hooks.dart';
 
-class AboutMeText extends StatelessWidget {
+class AboutMeText extends HookWidget {
   const AboutMeText({
     super.key,
     required this.slideTransition,
@@ -30,7 +31,7 @@ class AboutMeText extends StatelessWidget {
               ),
               Text(
                 """I’m Ahmed Tamer Elsayed, a Flutter Developer based in Cairo, Egypt.\n With a Bachelor’s Degree in Computer Science from Helwan University,\n I specialize in creating efficient, user-friendly applications using Flutter and Dart.\n I thrive on solving real-world problems through innovative technology,\n focusing on clean architecture and performance optimization.\n Passionate about continuous learning and collaboration,\n I’m excited to contribute to impactful projects.""",
-                style: Theme.of(context).textTheme.bodyMedium,
+                style: Theme.of(context).textTheme.titleSmall,
               ),
             ],
           ),
