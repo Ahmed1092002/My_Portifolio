@@ -16,7 +16,7 @@ class HomeView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.only(top: 120),
+      padding: EdgeInsets.only(top: 100),
       child: SizedBox(
         width: MediaQuery.of(context).size.width,
         child: Wrap(

@@ -6,13 +6,15 @@ import 'package:my_portifolio/DesktopLayout/features/EducationFeature/components
 
 class CustomAnimationWidget extends StatefulWidget {
   final List<Widget> educationList;
-  final String title;
+   String? title;
+  Offset? offset;
 
-  const CustomAnimationWidget({
-    Key? key,
+   CustomAnimationWidget({
+    super.key,
     required this.educationList,
-    required this.title,
-  }) : super(key: key);
+     this.title="",
+    this.offset=const Offset(1, 0) ,
+  });
   @override
   State<CustomAnimationWidget> createState() => _CustomAnimationWidgetState();
 }
@@ -34,7 +36,7 @@ class _CustomAnimationWidgetState extends State<CustomAnimationWidget>
     position = List.generate(
       widget.educationList.length,
       (index) => Tween<Offset>(
-        begin: const Offset(1, 0),
+        begin: widget.offset,
         end: Offset.zero,
       ).animate(
         CurvedAnimation(
@@ -84,7 +86,7 @@ class _CustomAnimationWidgetState extends State<CustomAnimationWidget>
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
-          widget.title,
+          widget.title!,
           style: Theme.of(context).textTheme.bodyMedium,
         ),
         Wrap(

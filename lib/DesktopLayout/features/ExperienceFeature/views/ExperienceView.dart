@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:my_portifolio/DesktopLayout/features/EducationFeature/components/education_container.dart';
 import 'package:my_portifolio/DesktopLayout/features/ExperienceFeature/components/ExperienceCard.dart';
 import 'package:my_portifolio/core/shared/widgets/CustomAnimationWidget.dart';
+import 'package:my_portifolio/core/shared/widgets/custom_small_image.dart';
 
 class ExperienceView extends StatelessWidget {
   const ExperienceView({Key? key}) : super(key: key);
@@ -14,11 +15,29 @@ class ExperienceView extends StatelessWidget {
       child: SingleChildScrollView(
         child: Column(
           children: [
-            Center(
-              child: Text(
-                'My Experience',
-                style: Theme.of(context).textTheme.headlineLarge,
-              ),
+            CustomAnimationWidget(
+              offset: Offset(0, 1),
+              educationList: [
+                Center(
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      const CustomSmallImage(
+                          image: "assets/images/briefcase.png"),
+                      SizedBox(
+                        height: 50.h,
+                      ),
+                      Text(
+                        'My Experience',
+                        style: Theme.of(context).textTheme.headlineLarge,
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            ),
+            SizedBox(
+              height: 50.h,
             ),
             Wrap(
               spacing: 10.w,
@@ -27,12 +46,11 @@ class ExperienceView extends StatelessWidget {
               crossAxisAlignment: WrapCrossAlignment.start,
               runAlignment: WrapAlignment.start,
               direction: Axis.horizontal,
-          
               children: [
-                const CustomAnimationWidget(
+                CustomAnimationWidget(
                   title: "Experience",
                   educationList: [
-                    ExperienceCard(
+                    const ExperienceCard(
                       title: "Flutter Developer",
                       date: "Apr 2024 – Jun 2024",
                       company: "Ahjazili, Freelance Project",
@@ -46,16 +64,16 @@ class ExperienceView extends StatelessWidget {
                 SizedBox(
                   width: 50.w,
                 ),
-                const CustomAnimationWidget(
+                CustomAnimationWidget(
                   title: "Volunteering Experience",
                   educationList: [
-                    ExperienceCard(
+                    const ExperienceCard(
                       title: "HR Link, Member",
                       date: "Oct 2021 – Apr 2022",
                       company: "Cairo, Egypt",
                       duration: "Duration: 1 Year",
                     ),
-                    ExperienceCard(
+                    const ExperienceCard(
                       title: "MSP Graphic Design",
                       date: "Oct 2021 – Aug 2022",
                       company: "Cairo, Egypt",

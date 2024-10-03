@@ -6,6 +6,8 @@ import 'package:my_portifolio/DesktopLayout/features/AboutMeFeature/gui/componen
 
 import 'package:my_portifolio/core/shared/colors/ColorsUtiles.dart';
 import 'package:my_portifolio/core/shared/themes/dark_theme.dart';
+import 'package:my_portifolio/core/shared/widgets/CustomAnimationWidget.dart';
+import 'package:my_portifolio/core/shared/widgets/custom_small_image.dart';
 
 class MyBiographayWidget extends StatelessWidget {
   const MyBiographayWidget({
@@ -16,9 +18,23 @@ class MyBiographayWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Text(
-          "My Biography",
-          style: Theme.of(context).textTheme.headlineLarge,
+        SizedBox(
+          height: 50.h,
+        ),
+        CustomAnimationWidget(
+          offset: Offset(-1, 0),
+          educationList: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                CustomSmallImage(image: "assets/images/resume.png"),
+                Text(
+                  "My Biography",
+                  style: Theme.of(context).textTheme.headlineLarge,
+                ),
+              ],
+            )
+          ],
         ),
         SizedBox(
           height: 50.h,

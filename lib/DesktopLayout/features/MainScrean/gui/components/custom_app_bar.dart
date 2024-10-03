@@ -49,6 +49,15 @@ class _CustomAppBarState extends State<CustomAppBar> {
                   onScroll: () => widget.onScroll(KeyUtiles.experience),
 
         ),
+                CustomTextButton(title: "Skills",
+                                  onScroll: () => widget.onScroll(KeyUtiles.skills),
+
+                ),
+        // CustomTextButton(
+        //   title: "Skills",
+          
+
+        // ),
         // CustomTextButton(title: "Skills"),
         // CustomTextButton(
         //   title: "Projects",

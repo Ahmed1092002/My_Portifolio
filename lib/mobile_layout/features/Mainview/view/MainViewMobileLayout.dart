@@ -86,6 +86,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:my_portifolio/DesktopLayout/features/AboutMeFeature/gui/views/AboutMeView.dart';
 import 'package:my_portifolio/DesktopLayout/features/EducationFeature/view/EducationView.dart';
+import 'package:my_portifolio/DesktopLayout/features/ExperienceFeature/views/ExperienceView.dart';
 import 'package:my_portifolio/core/shared/themes/dark_theme.dart';
 import 'package:my_portifolio/mobile_layout/features/HomeViewMobileLayout/gui/components/home_view_mobile_layout.dart';
 import 'package:my_portifolio/mobile_layout/features/Mainview/components/CustomAppBarMobileLayout.dart';
@@ -114,7 +115,6 @@ class _MainViewMobileLayoutState extends State<MainViewMobileLayout> {
     super.dispose();
   }
 
-  // Function to navigate between sections using PageView
   void _scrollToSection(String section) {
     switch (section) {
       case KeyUtiles.home:
@@ -125,11 +125,12 @@ class _MainViewMobileLayoutState extends State<MainViewMobileLayout> {
         break;
       case KeyUtiles.aboutMe:
         _pageController.animateToPage(2,
-            duration: Duration(milliseconds: 1000),
-            curve: Curves.easeInOut); // AboutMeView
-        break;   
-      case KeyUtiles.aboutMe:
+            duration: Duration(milliseconds: 1000), curve: Curves.easeInOut);
+      case KeyUtiles.education:
         _pageController.animateToPage(4,
+            duration: Duration(milliseconds: 1000), curve: Curves.easeInOut);
+      case KeyUtiles.experience:
+        _pageController.animateToPage(6,
             duration: Duration(milliseconds: 1000),
             curve: Curves.easeInOut); // AboutMeView
         break;
@@ -160,11 +161,13 @@ class _MainViewMobileLayoutState extends State<MainViewMobileLayout> {
           SizedBox(
             height: MediaQuery.maybeOf(context)?.size.height.h,
           ), // First Page (Home)
-          AboutMeView(),      
-              SizedBox(
+          AboutMeView(),
+          SizedBox(
             height: MediaQuery.maybeOf(context)?.size.height.h,
           ), // First Page (Home)
-          EducationView(), // Second Page (About Me)
+          EducationView(),
+          SizedBox(height: 150.h),
+          ExperienceView() // Second Page (About Me)
         ],
       ),
     );

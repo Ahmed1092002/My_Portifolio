@@ -85,12 +85,15 @@ class _DropMenuWidgetState extends State<DropMenuWidget> {
 
             ),
           ),
-          // DropdownMenuItem(
-          //   value: 'skills',
-          //   child: CustomTextButton(
-          //     title: "Skills",
-          //   ),
-          // ),
+          DropdownMenuItem(
+            value: 'skills',
+            onTap: () => widget.onScroll(KeyUtiles.skills) ,
+            child: CustomTextButton(
+              title: "Skills",
+                                onScroll: () => widget.onScroll(KeyUtiles.skills),
+
+            ),
+          ),
           // DropdownMenuItem(
           //   value: 'projects',
           //   child: CustomTextButton(
